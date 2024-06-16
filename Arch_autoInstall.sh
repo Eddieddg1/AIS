@@ -1,21 +1,21 @@
 read -p "Enter Region/City for timezone (e.g., Europe/Berlin): " TIMEZONE
-ln -sf /usr/share/zoneinfo/\$TIMEZONE /etc/localtime
+ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 hwclock --systohc
 
 locale-gen
 read -p "Please select language. en_US.UTF-8: " LANG
-if [[ -z "\$LANG" ]]; then
+if [[ -z "$LANG" ]]; then
     LANG="en_US.UTF-8"
 fi
-echo "LANG=\$LANG" > /etc/locale.conf
-echo "\$LANG UTF-8" > /etc/locale.gen
+echo "LANG=$LANG" > /etc/locale.conf
+echo "$LANG UTF-8" > /etc/locale.gen
 locale-gen
 
 read -p "Please select keyboard layout. sv-latin1: " KEYMAP
-if [[ -z "\$KEYMAP" ]]; then
+if [[ -z "$KEYMAP" ]]; then
     KEYMAP="sv-latin1"
 fi
-echo "KEYMAP=\$KEYMAP" > /etc/vconsole.conf
+echo "KEYMAP=$KEYMAP" > /etc/vconsole.conf
 
 mkinitcpio -P
 
@@ -25,7 +25,7 @@ passwd
 echo "Boot loaders: (~)EFISTUB, (X)Unified kernel image, (~)GRUB, (X)Limine, (X)rEFInd, (X)Syslinux, (X)systemd-boot"
 echo "(X) = Not currently supported, (O) = Supported, (~) Work In Progress"
 read -p "Please make sure to spell it correctly: " boot
-case "\$boot" in
+case "$boot" in
     "EFISTUB")
         pacman -S --noconfirm efibootmgr
         umount /dev/${DISK}${PART_SUFFIX}1
@@ -60,7 +60,7 @@ case "\$boot" in
 #        bootctl install
 #        ;;
     *)
-        echo "Boot loader '\$boot' not recognized or not supported."
+        echo "Boot loader '$boot' not recognized or not supported."
         exit 1
         ;;
 esac
