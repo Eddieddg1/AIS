@@ -85,7 +85,7 @@ case "$boot" in
 esac
 
 systemctl enable sddm.service
-systenctl enable NetworkManager
+systemctl enable NetworkManager
 
 read -p "Do you want Awesome? (O for awesome): " AWESOME
 if [[ $AWESOME == O* ]]; then
