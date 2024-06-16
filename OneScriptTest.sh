@@ -56,4 +56,3 @@ EOF_CHROOT
 
 umount -R /mnt
 reboot
-#:)
