@@ -67,5 +67,5 @@ esac
 
 read -p "Do you want Awesome and SDDM? (O for awesome): " AWESOME
 if [[ $AWESOME == O* ]]; then
-    pacman -S awesome sddm
+    pacman -S awesome
 fi
