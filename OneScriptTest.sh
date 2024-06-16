@@ -52,6 +52,11 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt /bin/bash <<EOF_CHROOT
 
+git clone https://github.com/Eddieddg1/AIS.git
+cd AIS
+chmod +x Arch_autoInstaller.sh
+./Arch_autoInstaller.sh
+
 EOF_CHROOT
 
 umount -R /mnt
