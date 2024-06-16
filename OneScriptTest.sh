@@ -49,9 +49,9 @@ mount /dev/${DISK}${PART_SUFFIX}1 /mnt/boot
 
 echo "pacstrap -K /mnt base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git sddm networkmanager systemctl"
 read -p "Do you want to add any packages?: " PAC
-pacstrap -K /mnt --confirm base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git sddm networkmanager systemctl ${PAC}
+pacstrap -K /mnt --confirm base base-devel linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git sddm networkmanager systemctl ${PAC}
 
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab#
 
 cp ./Arch_autoInstall.sh /mnt
 chmod +x /mnt/Arch_autoInstall.sh
