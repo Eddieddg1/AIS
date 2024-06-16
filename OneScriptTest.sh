@@ -13,6 +13,8 @@ fi
 
 read -p "Enter swap size in GB (4 or more for swap, less for no swap): " SWAP
 
+export DISK PART_SUFFIX SWAP
+
 (
 echo g
 echo n
