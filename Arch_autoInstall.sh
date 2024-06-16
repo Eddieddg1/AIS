@@ -65,7 +65,7 @@ case "$boot" in
         ;;
 esac
 
-read -p "Do you want Awesome and SDDM? (O for awesome): " AWESOME
+read -p "Do you want Awesome? (O for awesome): " AWESOME
 if [[ $AWESOME == O* ]]; then
     pacman -S awesome
 fi
