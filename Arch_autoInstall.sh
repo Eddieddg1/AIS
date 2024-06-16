@@ -57,6 +57,12 @@ case "$boot" in
         mount /dev/${DISK}${PART_SUFFIX}1 /boot/efi
         grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
         grub-mkconfig -o /boot/grub/grub.cfg
+        if grub-mkconfig -o /boot/grub/grub.cfg; then
+            echo "GRUB configuration file created successfully."
+        else
+            echo "Failed to create GRUB configuration file." >&2
+            exit 1
+        fi
         ;;
 #    "Limine")
 #        sudo pacman -S limine
