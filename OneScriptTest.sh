@@ -42,9 +42,9 @@ mkfs.ext4 /dev/${DISK}${PART_SUFFIX}3
 mount /dev/${DISK}${PART_SUFFIX}3 /mnt
 mkdir -p /mnt/boot
 mount /dev/${DISK}${PART_SUFFIX}1 /mnt/boot
-echo "pacstrap -K /mnt base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git"
+echo "pacstrap -K /mnt base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git sddm"
 read -p "Do you want to add any packages?: " PAC
-pacstrap -K /mnt --confirm base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git ${PAC}
+pacstrap -K /mnt --confirm base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git sddm ${PAC}
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
