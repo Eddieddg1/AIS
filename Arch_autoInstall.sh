@@ -39,6 +39,12 @@ case "$boot" in
         mkdir -p /boot/efi
         mount /dev/${DISK}${PART_SUFFIX}1 /boot/efi
         efibootmgr --create --disk /dev/${DISK} --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=/dev/${DISK}${PART_SUFFIX}3 rw initrd=\initramfs-linux.img'
+        if efibootmgr | grep -q "Arch Linux"; then
+            echo "EFISTUB boot entry created successfully."
+        else
+            echo "Failed to create EFISTUB boot entry." >&2
+            exit 1
+        fi
         ;;
 #    "Unified kernel image")
 #        umount /dev/${DISK}${PART_SUFFIX}1
