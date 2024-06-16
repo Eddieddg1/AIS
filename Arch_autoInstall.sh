@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -e
+
 read -p "Enter Region/City for timezone (e.g., Europe/Berlin): " TIMEZONE
 ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 hwclock --systohc
