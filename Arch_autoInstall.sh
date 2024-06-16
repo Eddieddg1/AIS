@@ -64,6 +64,8 @@ case "$boot" in
         ;;
 esac
 
+systemctl enable sddm.service
+
 read -p "Do you want Awesome? (O for awesome): " AWESOME
 if [[ $AWESOME == O* ]]; then
     pacman -S awesome
