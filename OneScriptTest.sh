@@ -51,4 +51,5 @@ pacstrap -K /mnt ${BASE_PACKAGES} ${ADDITIONAL_PACKAGES}
 genfstab -U /mnt >> /mnt/etc/fstab
 
 cp ./Arch_autoInstall.sh /mnt
+chmod +x /mnt/Arch_autoInstall.sh
 arch-chroot /mnt /bin/bash -c "./Arch_autoInstall.sh"
