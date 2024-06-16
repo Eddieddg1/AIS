@@ -21,6 +21,14 @@ mkinitcpio -P
 echo "Enter root password"
 passwd
 
+read -p "Enter username for new user: " USERNAME
+useradd -m -G wheel -s /bin/bash $USERNAME
+
+echo "Set password for $USERNAME"
+passwd $USERNAME
+
+echo "$USERNAME ALL=(ALL) ALL" >> /etc/sudoers
+
 echo "Boot loaders: (~)EFISTUB, (X)Unified kernel image, (~)GRUB, (X)Limine, (X)rEFInd, (X)Syslinux, (X)systemd-boot"
 echo "(X) = Not currently supported, (O) = Supported, (~) Work In Progress"
 read -p "Please make sure to spell it correctly: " boot
