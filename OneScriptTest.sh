@@ -52,6 +52,3 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 cp ./Arch_autoInstall.sh /mnt
 arch-chroot /mnt /bin/bash -c "./Arch_autoInstall.sh"
-
-umount -R /mnt
-reboot
