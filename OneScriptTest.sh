@@ -44,7 +44,7 @@ mkdir -p /mnt/boot
 mount /dev/${DISK}${PART_SUFFIX}1 /mnt/boot
 
 echo "pacstrap -K /mnt base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git"
-read -p "Do you want to add any additional packages? (space-separated): " PAC
+read -p "Do you want to add any packages? (space-separated): " PAC
 pacstrap -K /mnt base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git ${PAC}
 
 genfstab -U /mnt >> /mnt/etc/fstab
