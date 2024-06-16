@@ -50,12 +50,8 @@ pacstrap -K /mnt ${BASE_PACKAGES} ${ADDITIONAL_PACKAGES}
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-arch-chroot /mnt
-
-git clone https://github.com/Eddieddg1/AIS.git
-cd AIS
-chmod +x Arch_autoInstaller.sh
-./Arch_autoInstaller.sh
+cp ./Arch_autoInstall.sh /mnt
+arch-chroot /mnt /bin/bash -c "./Arch_autoInstall.sh"
 
 umount -R /mnt
 reboot
