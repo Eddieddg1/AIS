@@ -42,7 +42,7 @@ mkfs.ext4 /dev/${DISK}${PART_SUFFIX}3
 mount /dev/${DISK}${PART_SUFFIX}3 /mnt
 mkdir -p /mnt/boot
 mount /dev/${DISK}${PART_SUFFIX}1 /mnt/boot
-
+#WHY IS IT SKIPPING?!
 echo "pacstrap -K /mnt base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git"
 read -p "Do you want to add any packages?: " PAC
 pacstrap -K /mnt --confirm base linux linux-firmware fastfetch htop nano thunderbird konsole vlc kate git ${PAC}
