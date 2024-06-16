@@ -16,7 +16,7 @@ if [[ -z "$KEYMAP" ]]; then
     KEYMAP="sv-latin1"
 fi
 echo "KEYMAP=$KEYMAP" > /etc/vconsole.conf
-
+#WHY IS IT SKIPPING ALL OF THE ABOVE?!
 mkinitcpio -P
 
 echo "Enter root password"
