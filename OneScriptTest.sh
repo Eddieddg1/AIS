@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 timedatectl
 echo "Available disks:"
 fdisk -l | grep "Disk /dev/"
