@@ -33,7 +33,7 @@ passwd $USERNAME
 
 echo "$USERNAME ALL=(ALL) ALL" >> /etc/sudoers
 
-echo "Boot loaders: (~)EFISTUB, (X)Unified kernel image, (~)GRUB, (X)Limine, (X)rEFInd, (X)Syslinux, (X)systemd-boot"
+echo "Boot loaders: (O)EFISTUB, (X)Unified kernel image, (O)GRUB, (X)Limine, (X)rEFInd, (X)Syslinux, (X)systemd-boot"
 echo "(X) = Not currently supported, (O) = Supported, (~) Work In Progress"
 read -p "Please make sure to spell it correctly: " boot
 case "$boot" in
