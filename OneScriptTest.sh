@@ -23,6 +23,9 @@ echo n
 echo
 echo
 echo +1G
+echo y
+echo t
+echo EFI System
 if [[ $SWAP -ge 4 ]]; then
     echo n
     echo
